@@ -1,6 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import Routes from './Screens/Routes';
 import { Auth0Provider } from '@auth0/auth0-react';
+
+import Routes from './Screens/Routes';
 import './App.css';
 function App() {
     return (

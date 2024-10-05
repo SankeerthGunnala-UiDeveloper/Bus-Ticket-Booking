@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Travelersdata } from '../../../constants/Travelersdata';
 import { Box, Paper, Stack } from '@mui/material';
 import Card from '@mui/material/Card';
@@ -6,7 +6,6 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import moment from 'moment/moment';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import PersistantStore from '../../../Zstore/usePersistantStore';
 import GradeTwoToneIcon from '@mui/icons-material/GradeTwoTone';
@@ -17,9 +16,7 @@ function Busesdetails() {
     const bookedDetails = PersistantStore(state => state.journeyDetails);
     const [openDialog, setDialog] = useState(false);
     const [selectedBus, SetSelectedBus] = useState({});
-    const [busData, setBusData] = useState(Travelersdata);
-    console.log(busData, 'busData');
-    console.log(bookedDetails, 'book');
+    const [busData] = useState(Travelersdata);
 
     /*     useEffect(() => {
         console.log(Travelersdata, 'Travelersdata');

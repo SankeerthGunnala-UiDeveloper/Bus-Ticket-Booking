@@ -1,5 +1,5 @@
-import { Stack, Typography, Autocomplete, TextField } from '@mui/material';
-import { useReducer, useState } from 'react';
+import { Stack, Typography } from '@mui/material';
+import { useState } from 'react';
 import FlightTwoToneIcon from '@mui/icons-material/FlightTwoTone';
 
 const colorObject = {
@@ -47,7 +47,7 @@ const seatr = {
 };
 
 // Seat component
-const Seat = ({ id, isBooked, onClick }) => {
+/* const Seat = ({ id, isBooked, onClick }) => {
     const seatStyle = {
         backgroundColor: isBooked ? 'red' : 'green',
         width: '50px',
@@ -61,24 +61,22 @@ const Seat = ({ id, isBooked, onClick }) => {
             {id}
         </div>
     );
-};
+}; */
 
-const reducerFun = (state, newState) => ({
+/* const reducerFun = (state, newState) => ({
     ...state,
     ...newState,
-});
+}); */
 
-const initialData = {
+/* const initialData = {
     boardingPoint: null,
     droppingPoint: null,
-};
+}; */
 
 // Bus component
 const SeatLayout = ({ selectedBus }) => {
-    console.log(selectedBus, 'selectedbu');
-
     const [selectedSeat, setSelectedSeat] = useState([]);
-    const [busInfo, setBusInfo] = useState(selectedBus);
+    // const [busInfo, setBusInfo] = useState(selectedBus);
 
     // const handleSeatClick = seatIndex => {
     //     if (!seats[seatIndex]) {

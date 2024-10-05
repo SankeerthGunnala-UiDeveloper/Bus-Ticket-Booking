@@ -26,8 +26,7 @@ const reducer = (state, newState) => ({
 
 function DestinationSearch() {
     const [state, setState] = useReducer(reducer, initialKeys);
-    const { journeyDate, startingPlace, droppingPlace, fromSource, toDestiny } = state;
-    console.log(state, 'state');
+    const { startingPlace, droppingPlace, fromSource, toDestiny } = state;
     const saveJourney = PersistantStore(state => state.setJourneyDetails);
     const navigate = useNavigate();
 
@@ -52,20 +51,24 @@ function DestinationSearch() {
     };
 
     const handleSearchForDestination = () => {
-        const obj = {
-            startedPlace: state.startingPlace?.value,
-            droppedPlace: state.droppingPlace?.value,
-            journeyDate: moment(state.journeyDate).format('L'),
-        };
-        saveJourney(obj);
-        if (Object.values(obj)) {
-            navigate('/bookings');
+        if (state.startingPlace?.value && state.droppingPlace?.value && state.journeyDate) {
+            const obj = {
+                startedPlace: state.startingPlace?.value,
+                droppedPlace: state.droppingPlace?.value,
+                journeyDate: moment(state.journeyDate).format('L'),
+            };
+            saveJourney(obj);
+            if (Object.values(obj)) {
+                navigate('/bookings');
+            }
+        } else {
+            alert('Please select the place and date');
         }
     };
 
     return (
         <div style={{ position: 'absolute', zIndex: 100, top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-            <Grid container gap={'10px'} sx={{ backgroundColor: '#fff', margin: '0px auto', padding: '10px', flexWrap: 'nowrap', alignItems: 'center' }}>
+            <Grid container gap={'10px'} sx={{ backgroundColor: '#fff', margin: '0px auto', padding: '10px', flexWrap: 'nowrap', alignItems: 'center', borderRadius: '12px' }}>
                 <Grid item md={3.5} sx={{ width: 250 }}>
                     <Autocomplete
                         disablePortal

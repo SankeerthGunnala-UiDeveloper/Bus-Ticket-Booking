@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Popover from '@mui/material/Popover';
 import { Typography, Button, Box } from '@mui/material';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -8,8 +8,8 @@ import Adversitements from './components/Adversitements';
 import '../../App.css';
 
 function DashBoard() {
-    const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const { logout, user } = useAuth0();
+    const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = event => {
         setAnchorEl(event.currentTarget);
@@ -18,7 +18,7 @@ function DashBoard() {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    console.log(user, 'user');
+
     const open = Boolean(anchorEl);
 
     return (

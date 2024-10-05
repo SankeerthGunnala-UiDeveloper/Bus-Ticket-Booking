@@ -5,10 +5,10 @@
 }
 
 .destination {
-    background-image: url(https://st.redbus.in/Images/HomeIndia/HeroImageV2_C.png);
+    background-image: url(https://static.abhibus.com/busimages/img/web-bg-dasara-2024-2x.webp);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 500px;
+    height: 100vh;
     position: relative;
 }
 

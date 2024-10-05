@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { Stack, Typography, Autocomplete, TextField } from '@mui/material';
+import { Stack, Autocomplete, TextField } from '@mui/material';
 import SeatLayout from '../SeatLayout';
 
 const reducerFun = (state, newState) => ({
